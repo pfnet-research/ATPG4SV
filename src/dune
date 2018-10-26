@@ -1,0 +1,21 @@
+(menhir 
+; (flags -v --trace)
+  (modules parser))
+
+(ocamllex lexer)
+
+(executable
+  (name main)
+  ; (flags -w -27-40)
+  (libraries ocamlgraph str z3)
+  (preprocess (pps ppx_deriving.std)))
+
+;(library
+;  (name myparsing)
+;  (flags -w -27)
+;  (preprocess (pps ppx_deriving.std)))
+  
+;(executable
+;  (name svp)
+;  (flags -w -27)
+;  (preprocess (pps ppx_deriving.std)))
